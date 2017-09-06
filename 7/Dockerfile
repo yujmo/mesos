@@ -2,7 +2,7 @@ FROM centos:latest
 MAINTAINER yujmo yujmo94@gmail.com
 RUN yum install -y tar wget git epel-release \
    && wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo \
-   && bash -c 'cat > /etc/yum.repos.d/wandisco-svn.repo <<EOF
+   && tee /etc/yum.repos.d/wandisco-svn.repo <<- 'EOF'
         [WANdiscoSVN]
         name=WANdisco SVN Repo 1.9
         enabled=1
