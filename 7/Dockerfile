@@ -1,6 +1,6 @@
 FROM centos:latest
 MAINTAINER yujmo yujmo94@gmail.com
-RUN yum install -y tar wget git epel-release \
+RUN yum update -y && yum install -y tar wget git epel-release \
    && wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo 
 COPY wandisco-svn.repo /etc/yum.repos.d/wandisco-svn.repo
 RUN yum update systemd && yum groupinstall -y "Development Tools" \
